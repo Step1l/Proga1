@@ -1,4 +1,17 @@
 public class Main{
+    public static void printMatrix(double[][] mat){
+        for(int i=0;i<8;i++){
+
+            for(int j=0;j<10;j++){
+                if (mat[i][j]<0 || mat[i][j]>10){
+                System.out.printf("%.2f  ", mat[i][j]);
+                }
+                else{
+                    System.out.printf(" %.2f  ", mat[i][j]);
+                }
+            }
+            System.out.println();
+    }}
     public static void main(String[] args){
         long[] g = new long[]{2,4,6,8,10,12,14,16};
         double[] x = new double[10];
@@ -23,19 +36,7 @@ public class Main{
         printMatrix(p);
         
     }
-    public static void printMatrix(double[][] mat){
-        for(int i=0;i<8;i++){
-
-            for(int j=0;j<10;j++){
-                if (mat[i][j]<0 || mat[i][j]>10){
-                System.out.printf("%.2f  ", mat[i][j]);
-                }
-                else{
-                    System.out.printf(" %.2f  ", mat[i][j]);
-                }
-            }
-            System.out.println();
-    }}
+    
 
 
 }
