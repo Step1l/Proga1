@@ -1,3 +1,4 @@
+
 public class Main{
     public static void printMatrix(double[][] mat){
         for(int i=0;i<8;i++){
@@ -24,7 +25,10 @@ public class Main{
 
         }}
     public static void main(String[] args){
-            long[] g = new long[]{2,4,6,8,10,12,14,16};
+            long[] g = new long[8];
+            for (int i=1;i<=8;i++){
+                g[i-1]=i*2;
+            }
             double[] x = new double[10];
             for(int i=0;i<10;i++){
                 x[i] = (Math.random()*22.0)-15.0;
@@ -35,10 +39,6 @@ public class Main{
                     p[i][j]=genElement(g,x,i,j);
                 }
             }
-
-
         printMatrix(p);
-
     }
-
 }
