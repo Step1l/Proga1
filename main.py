@@ -86,17 +86,18 @@ def  sp(i,a):
 
 
 
-
-i=0
-while i < len(a):
-    if ':\n' in a[i] and a[i + 1].lstrip()[0] == '-':
-        i = sp(i, a)
-    elif ':\n' in a[i]:
-        i = ob(i, a)
-    else:
-        a[i] = '  ' + (len(a[i]) - len(a[i].lstrip())) * ' ' + '''"''' + a[i][len(a[i]) - len(a[i].lstrip()):a[i].index(
-            ':')] + '''"''' + ':' + ' ' + a[i][a[i].index(':') + 2:len(a[i]) - 2] + '''",'''
-        i += 1
-a[-1]=a[-1][:-1]
-a=['{']+a+['}']
-print('\n'.join(a))
+def st(a):
+    i=0
+    while i < len(a):
+        if ':\n' in a[i] and a[i + 1].lstrip()[0] == '-':
+            i = sp(i, a)
+        elif ':\n' in a[i]:
+            i = ob(i, a)
+        else:
+            a[i] = '  ' + (len(a[i]) - len(a[i].lstrip())) * ' ' + '''"''' + a[i][len(a[i]) - len(a[i].lstrip()):a[i].index(
+                ':')] + '''"''' + ':' + ' ' + a[i][a[i].index(':') + 2:len(a[i]) - 2] + '''",'''
+            i += 1
+    a[-1]=a[-1][:-1]
+    a=['{']+a+['}']
+    print(*a,sep='\n')
+st(a)
